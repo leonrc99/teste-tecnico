@@ -1,0 +1,25 @@
+<div class="form-ben">
+  <h2 class="title-ben">Cadastro de Beneficiários</h2>
+  <form (ngSubmit)="salvarBeneficiario()">
+    <div class="form-line">
+      <label for="cpf">CPF:</label>
+      <input id="cpf" [(ngModel)]="cpf" mask="000.000.000-00" required />
+    </div>
+    <div class="form-line">
+      <label for="nome">Nome:</label>
+      <input id="nome" [(ngModel)]="nome" maxlength="55" required />
+    </div>
+    <div class="form-line">
+      <label for="dataNascimento">Data de Nascimento:</label>
+      <input
+        id="dataNascimento"
+        [(ngModel)]="dataNascimento"
+        type="date"
+        required
+      />
+    </div>
+    <button type="submit">Salvar</button>
+  </form>
+  <div class="mensagem-sucesso">{{ mensagemSucesso }}</div>
+  <div class="mensagem-erro">{{ mensagemErro }}</div>
+</div>

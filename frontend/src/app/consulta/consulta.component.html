@@ -1,0 +1,71 @@
+<div class="form-con">
+  <h2 class="title-con">Consulta</h2>
+  <form>
+    <div class="form-line">
+      <label for="cpfConsulta">CPF:</label>
+      <div>
+        <input
+          id="cpfConsulta"
+          [(ngModel)]="cpf"
+          mask="000.000.000-00"
+          name="cpfConsulta"
+          [ngModelOptions]="{ standalone: true }"
+          required
+        />
+        <button type="button" (click)="buscarBeneficiario()">Lupa</button>
+      </div>
+    </div>
+    <div class="form-line">
+      <label for="nomeBeneficiario">Nome do Beneficiário:</label>
+      <input
+        id="nomeBeneficiario"
+        [(ngModel)]="nomeBeneficiario"
+        name="nomeBeneficiario"
+        [ngModelOptions]="{ standalone: true }"
+        disabled
+      />
+    </div>
+    <div class="form-line">
+      <label for="especialidades">Especialidade:</label>
+      <select
+        id="especialidades"
+        [(ngModel)]="especialidades"
+        name="especialidades"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      >
+        <option
+          *ngFor="let esp of especialidades"
+          [value]="esp.codigoEspecialidade"
+        >
+          {{ esp.nomeEspecialidade }}
+        </option>
+      </select>
+    </div>
+    <div class="form-line">
+      <label for="data">Data:</label>
+      <input
+        id="data"
+        [(ngModel)]="data"
+        type="date"
+        name="data"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+    </div>
+    <div class="form-line">
+      <label for="hora">Hora:</label>
+      <input
+        id="hora"
+        [(ngModel)]="hora"
+        placeholder="HH:mm"
+        name="hora"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+    </div>
+    <button type="button" (click)="agendarConsulta()">Salvar</button>
+  </form>
+  <div class="mensagem-sucesso">{{ mensagemSucesso }}</div>
+  <div class="mensagem-erro">{{ mensagemErro }}</div>
+</div>

@@ -1,0 +1,24 @@
+.form-ben {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+  height: 400px;
+  width: 600px;
+  padding: 100px;
+  border: 1px solid #000;
+  border-radius: 12px;
+
+  .title-ben {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .form-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px;
+  }
+}
